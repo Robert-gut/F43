@@ -1,0 +1,27 @@
+ul,ol,h1,h2,h3,h4,h5,h6,p,body{
+    margin: 0;
+    padding: 0;
+}
+
+ul,ol{
+    list-style-type: none;
+}
+
+body{
+    background-color: #fff;
+}
+
+.container-fluid{
+    box-sizing: border-box;
+    width: 100%;
+    clear: both;
+}
+
+.container{
+    margin: 0 auto;
+    width: 960px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+@import './fonts.css';
