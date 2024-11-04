@@ -1,0 +1,234 @@
+.content{
+    width: 150px;
+    height: 150px;
+    background: red;
+    border-radius: 50%;
+    position: relative;
+
+    animation-name: example;
+    /*! назвіа ключових кадрів*/
+
+    animation-duration: 2s;
+    /*! тривалісьть сек або в мілісек */
+
+    animation-timing-function: linear;
+    /*! прискорення  */
+
+    animation-delay: 1s;
+    /*! затримка  */
+
+    /* animation-iteration-count: 2; */
+    animation-iteration-count: infinite;
+    /*! К-ть відтворень можна вказувати число  */
+
+    animation-direction: alternate;
+    /*! пінпонг  */
+
+    animation-fill-mode: forwards;
+    /*! де буде кінець  */
+
+    /* animation-play-state: paused; */
+
+}
+
+.content{
+    width: 150px;
+    height: 150px;
+    background: red;
+    border-radius: 50%;
+    position: relative;
+
+    animation: example 3s ease-in-out infinite alternate forwards;
+
+}
+
+.content:hover{
+    animation-play-state: paused;
+}
+
+
+
+@keyframes example {
+    0%{
+        left: 0;
+    }
+    50%{
+        border-radius: 0%;
+        background: blue;
+    }
+    100%{
+        left: 700px;
+        background: yellow;
+    }
+}
+
+
+
+/*! ///////////////////////////////////////////  */
+/*? transition */
+
+.square{
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    background: green;
+
+    /* transition-property: background, width, height; */
+    /* transition-property: all; */
+    /*! це властивості які будуть змінюватися */
+
+    /* transition-duration: 3s, 2s, 500ms; */
+    /*! тривалісьть сек або мс*/
+
+    /* transition-timing-function: ease-in-out; */
+    /*! прискорення  */
+
+    /* transition-delay: 1s, 2s, 3s; */
+    /*! затримка  */
+
+    transition: all 1s ease-in-out 1s;
+    /*! скорочено  */
+
+}
+
+.square:hover{
+    background: pink;
+    width: 500px;
+    height: 500px;
+}
+
+/*! ////////////////////////////////////////////////////*/
+
+/*? transform  */
+
+.transform{
+    margin: 100px 200px;
+    border: 2px solid black;
+    display: inline-block;
+    /* overflow: hidden; */
+}
+
+.transform .transformImg{
+    width: 400px;
+
+    transition: all 1s linear;
+
+    /* transform-origin: right center; */
+    /* transform-origin: 30px 40px; */
+}
+
+.transform:hover .transformImg{
+    /* transform: rotate(-180deg); */
+    /*! обертання */
+    transform: scale(4.5);
+    /* transform: scale(-1.5, 1); */
+
+    /* transform: scaleX();
+    transform: scaleY(); */
+    /*! маштабування */
+
+    /* transform: translate(-50px, 50px); */
+    /*! зміщення  */
+
+    /* transform: skew(-20deg, -20deg); */
+    /* transform: skewY(-20deg);
+    transform: skewX(-20deg); */
+    /*! розтягування  */
+
+
+    /*! опорна точка  */
+    /* transform: rotate(-180deg); */
+
+
+}
+
+
+/*! ////////////////////////////////////////////////////*/
+
+/*? filter  */
+
+.filter{
+    margin: 200px;
+}
+
+.filter .filterImg{
+    width: 500px;
+    transition: all 2s linear;
+}
+
+.filterImg:hover{
+    /* filter: blur(5px); */
+    /*! Розмивання  */
+
+    /* filter: drop-shadow(50px 70px 5px red); */
+    /*! ТІНЬ (він не підтримує inset і 4 значення)  */
+
+    /* filter: grayscale(100%); */
+    /*! робить чорно-біле від 0 до 100%  */
+
+    /* filter: brightness(150%); */
+    /*!яскравісьть де 100% є дефолтним значенням  100< світліше і 100> темніше  */
+
+    /* filter: contrast(500%); */
+    /*!Контрастнісьть де 100% є дефолтним значенням  100< світліше і 100> темніше  */
+
+    /* filter: hue-rotate(100deg); */
+    /*!повороту відтінку на колірному колі 0 ло 360 deg  */
+
+    /* filter: invert(100%); */
+    /*! перетворення фотографії в негатив  */
+
+    /* filter: saturate(500%); */
+    /*! насищенісьть 100% є дефолтним значенням  */
+
+    /* filter: sepia(0%); */
+    /*! ефект старого фото 0% є дефолт, 0-100  */
+
+    /* filter: opacity(10%); */
+    /*! прозорісьть де 0% є повнісьть прозорим а 100% не прозорим  */
+
+    filter: blur(2px) contrast(150%) drop-shadow(5px 7px 5px red);
+
+}
+
+
+/* ............................. */
+.d14 {
+    box-shadow: 0px 0px 5px 20px red;
+    /* filter: drop-shadow(50px 70px 5px red); */
+
+
+
+    margin: 500px 0; 
+    height: 0; 
+    width: 0;
+    position: relative;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid #E7337A;
+    border-left: 50px solid transparent;
+    transform: rotate(35deg);
+    }
+    .d14:before, 
+    .d14:after {
+    content: "";
+    height: 0; 
+    width: 0;
+    position: absolute;
+    }
+    .d14:before {
+    top: -26px; 
+    left: -32px;
+    border-bottom: 40px solid #E7337A;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transform: rotate(-35deg);
+    }
+    .d14:after {
+    top: 2px; 
+    left: -53px;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid #E7337A;
+    border-left: 50px solid transparent;
+    transform: rotate(-70deg);
+    }
+/* ............................. */

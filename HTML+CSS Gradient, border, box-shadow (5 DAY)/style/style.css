@@ -1,0 +1,108 @@
+.box{
+    /* background-color: red; */
+    width: 500px;
+    height: 500px;
+    margin: 40px auto;
+    /* gradient */
+    /* background: linear-gradient(blue,red); */
+    /* background: linear-gradient(to right, blue,red); */
+    /* background: linear-gradient(to bottom right, blue,red); */
+    /* background: linear-gradient(60deg, blue,red); */
+    /* background: linear-gradient(blue,red, yellow, orange); */
+    /* background: linear-gradient(to bottom left, cyan 50%, palegoldenrod 50%); */
+    /* background: linear-gradient(180deg, rgb(197, 94, 94) 0%, rgb(116, 94, 197)9%, rgb(101, 197, 94) 30%, rgb(89, 8, 8) 90%); */
+    
+    /* background: radial-gradient(red, blue, yellow);
+    background: radial-gradient(red 10px, blue 30%, yellow 50%);
+    background: radial-gradient(at 80% 70%,yellow 10px, blue 30%, green 50%);
+    background: linear-gradient(to right, rgba(184,158,40,1) 0%, rgba(184,158,40,1) 13%, rgba(179,154,41,1) 14%, rgba(105,96,58,1) 28%, rgba(118,102,69,1) 29%, rgba(220,147,159,1) 37%, rgba(160,24,51,1) 41%, rgba(176,113,44,1) 49%, rgba(184,158,40,1) 53%, rgba(30,28,21,1) 62%, rgba(27,25,18,1) 65%, rgba(20,18,9,1) 73%, rgba(18,16,7,1) 75%, rgba(87,40,43,1) 83%, rgba(190,75,96,1) 95%, rgba(190,75,96,1) 100%); */
+
+    /*! border */
+
+    /* border-color: black;
+    border-style: solid;
+    border-width: 10px; */
+
+    /* border: 10px solid red; */
+
+    /* border: solid red; */
+    /* border: red; */
+    /* border-width: 10px 0px 30px 40px;
+    border-width: 10px 50px;
+    border-style: solid dotted dashed groove;
+    border-color: red blue yellow pink; */
+
+    /* border: 2px solid yellow; */
+    /* //////////////////////////////////////// */
+
+    /* border-bottom: 15px solid red;
+    border-top: 15px solid red;
+    border-right: 15px solid red;
+    border-left: 15px solid red; */
+
+    /* //////////////////////////////////////// */
+
+    /* border-radius: 30%; */
+    /* border-radius: 100px 300px; */
+    /* border-radius: 100px 200px 400px 200px;  */
+
+    border: 1px solid red;
+    /*! box-shadow: x y blur spread color; */
+    box-shadow:inset 0px 0px 9px 50px rgb(86, 78, 78);
+}
+
+/* .heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    box-shadow: 20px 20px 2px 0px rgb(86, 78, 78);
+  }
+  .heart::before,
+  .heart::after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0px;
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50px 50px 0px 0px;
+    transform: rotate(-45deg);
+    transform-origin: 0px 100%;
+  }
+  .heart::after {
+    left: 0px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  } */
+
+
+h1{
+    font-size: 70px;
+}
+
+.super_btn{
+    font-size: 40px;
+}
+
+/* a{
+    cursor: nwse-resize;
+} */
+
+/* a img{
+    width: 300px;
+}
+
+a img:hover{
+    width: 350px;
+    box-shadow: 20px 20px 8px 0px grey;
+} */
+
+a{
+    padding: 2px 8px;
+    background-color: rgb(228, 221, 221);
+    border: 1px solid black;
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+}

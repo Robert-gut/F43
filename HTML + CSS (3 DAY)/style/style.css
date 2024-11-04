@@ -1,0 +1,108 @@
+/* ! Синтаксис */
+/* selector{
+    properti: properti value;
+    properti: properti value;
+    properti: properti value;
+} */
+/** селектор  властивісьть значення */
+
+/*? СЕЛЕКТОРИ 5 */
+
+/*! 1 СЕЛЕКТОР ТЕГА */
+
+/* p{
+    color: red;
+} */
+
+/*! 2 СЕЛЕКТОР id => #id*/
+
+/* #selectorId{
+    color: red;
+} */
+
+/*! 3 СЕЛЕКТОР class => .class*/
+
+/* .selecrotClass{
+    color: red;
+} */
+
+/*! 4 СЕЛЕКТОР атрибута => [id="selectorId"]*/
+
+/* [id="selectorId"]{
+    color: red;
+} */
+
+/*! 5 СЕЛЕКТОР * all */
+
+/* *{
+    color: red;
+} */
+
+/* body{
+    background-color: red;
+} */
+
+
+/* ! групування  селекторі */
+
+/* h1, h2, p{
+    color: red;
+} */
+
+
+/* ? властивості елементів */
+
+@font-face {
+    font-family: 'Open';
+    src: url(../font/static/EduAUVICWANTGuides-Bold.ttf);
+}
+
+
+p{
+    /* ! властивості для текста */
+    /* font-family: 'Open'; */
+    font-size: 50px;
+    font-weight: 900;
+    font-style: italic;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    /* text-indent: 400px; */
+
+    /* ! колір */
+    /* текст */
+    color: green;
+    /* фон */
+    background-color: blue;
+
+    /*! розмір елемента */
+    width: 800px;
+    height: 600px;
+
+    /*! Рамки елмента */
+    /* border-width: 10px;
+    border-style: solid;
+    border-color: red; */
+
+    border: 10px solid red;
+
+    /* ! внутрішні відступи */
+    /* padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px; */
+
+    padding: 10px 20px 30px 40px;
+    /* padding: 10px;
+    padding: 40px 60px; */
+
+    /* ! Зовнішні відступи */
+
+    /* margin-top: ;
+    margin-right: ;
+    margin-bottom: ;
+    margin-left: ; */
+
+    margin: 50px;
+
+}
