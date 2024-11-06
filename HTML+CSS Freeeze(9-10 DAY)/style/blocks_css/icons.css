@@ -1,0 +1,18 @@
+.bg-icons{
+    background: #c8c10d;
+    padding: 40px;
+}
+
+.bg-icons li{
+    display: inline-block;
+    width: 24.5%;
+    text-align: center;
+}
+
+.bg-icons a{
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+    font-family: latoR;
+    cursor: pointer;
+}

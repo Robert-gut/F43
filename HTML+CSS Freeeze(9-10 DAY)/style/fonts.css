@@ -1,0 +1,48 @@
+@font-face {
+    font-family: LatoB;
+    src: url(../fonts/Lato-Bold.woff) format('woff'),
+     url(../fonts/Lato-Bold.woff) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+ 
+@font-face {
+    font-family: LatoR;
+    src: url(../fonts/Lato-Regular.woff) format('woff'),
+     url(../fonts/Lato-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+@font-face {
+    font-family: MagraB;
+    src: url(../fonts/Magra-Bold.woff) format('woff'),
+     url(../fonts/Magra-Bold.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+@font-face {
+    font-family: QuicksandB;
+    src: url(../fonts/Quicksand-Bold.woff) format('woff'),
+     url(../fonts/Quicksand-Bold.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+@font-face {
+    font-family: RammettoR;
+    src: url(../fonts/RammettoOne-Regular.woff) format('woff'),
+     url(../fonts/RammettoOne-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+@font-face {
+    font-family: RobotR;
+    src: url(../fonts/Roboto-Regular.woff) format('woff'),
+     url(../fonts/Roboto-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
