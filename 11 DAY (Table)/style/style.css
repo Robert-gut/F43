@@ -1,0 +1,65 @@
+/* table ,th ,td{
+    border: 2px solid black;
+
+    border-spacing: 10px 10px;
+    /*! відстані між комірками*/
+
+    /* border-collapse: collapse; */
+    /*! Заберає подвоєні бордери*/
+
+    /* caption-side: bottom; */
+    /*! позиціювання заголовка  */
+
+    /* empty-cells: hide; */
+    /*! показувати чи ні пусті комірки  */
+/* } */
+
+thead{
+    /* color: red; */
+}
+tbody{
+    /* background-color: blue; */
+}
+
+/* tfoot{ */
+    /* height: 50px;
+    text-align: right;
+    vertical-align: top;
+} */ 
+
+
+
+/* практична */
+
+table, th, td{
+    border: 1px solid rgb(0, 255, 242);
+    border-collapse: collapse;
+}
+
+thead{
+    background: #ccc;
+}
+
+thead tr td:nth-child(1),
+tbody tr td:nth-child(1){
+    width: 300px;
+}
+
+tbody tr td:nth-child(2){
+    background: rgb(124, 124, 215);
+}
+tbody tr td:nth-child(3){
+    background: rgb(205, 124, 124);
+}
+
+tbody tr td:nth-child(2),
+tbody tr td:nth-child(3){
+    text-align: center;
+    width: 60px;
+    height: 25px;
+}
+
+tfoot{
+    color: red;
+    text-align: center;
+}

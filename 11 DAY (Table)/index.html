@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+
+   <table 
+    border="1"
+    align="center"
+    bgcolor=""
+    cellpadding="20"
+    cellspacing="0"
+    bordercolor="blue"
+   >
+
+   <caption>
+    Заголовком таблиці
+   </caption>
+
+   <thead align="center">
+       <tr>
+           <th>Стовбець 1</th>
+           <th>Стовбець 2</th>
+           <th>Стовбець 3</th>
+        </tr>
+   </thead>
+   <tbody>
+       <tr>
+           <td rowspan="2" colspan="2">1</td>
+           <td>2</td>
+           <!-- <td>3</td> -->
+       </tr>
+       <tr>
+           <td>4</td>
+           <!-- <td>5</td> -->
+           <!-- <td>6</td> -->
+       </tr>
+    </tbody>
+    <tfoot> 
+        <tr>
+            <td colspan="2">7 foot</td>
+            <td>8 foot</td>
+            <!-- <td>9 foot</td> -->
+        </tr>
+   </tfoot>
+</table>
+<hr>
+   <!--! ///////////////////// css /////////////////////////// -->
+    <table>
+        <caption>
+        Заголовком таблиці
+        </caption>
+        <thead>
+            <tr>
+                <th>Стовбець 1</th>
+                <th>Стовбець 2</th>
+                <th>Стовбець 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+        <tfoot> 
+            <tr>
+                <td>7 foot</td>
+                <td>8 foot</td>
+                <td>9 foot</td>
+            </tr>
+        </tfoot>
+    </table>
+   
+
+    <!-- практична -->
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">День тижня</th>
+                <th colspan="2">Температура</th>
+            </tr>
+            <tr>
+                <th>Мін</th>
+                <th>Мак</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Понеділок</td>
+                <td>8</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Вівторок</td>
+                <td>10</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>Середа</td>
+                <td>11</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>Четвер</td>
+                <td>12</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>п'ятниця</td>
+                <td>14</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Субота</td>
+                <td>14</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>Неділя</td>
+                <td>15</td>
+                <td>22</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Осдків не передбачається</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+</body>
+</html>
