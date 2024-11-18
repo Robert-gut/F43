@@ -5,7 +5,7 @@
     display: flex;
     /*!вказуємо що в цьому контейнері ми будемо використовувати flex  */
 
-    flex-direction: row;
+    flex-direction: ;
     /*! змінюємо напрямок головної осі*/
 
     justify-content: space-evenly;
