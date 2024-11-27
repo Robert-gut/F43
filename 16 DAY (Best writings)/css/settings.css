@@ -1,0 +1,78 @@
+@import url(./bootstrap-grid.min.css);
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --color_main_1: #1b7fd0;
+    --color_main_2: #013056;
+    --color_h1: #1b7fd0;
+    --color_h2: #1b7fd0;
+    --color_h3: #000;
+    --color_h4: #1b7fd0;
+    --color_p_text: #000;
+
+    --color_btn_read_more: #075da2;
+    --color_btn_read_more_hover: #caddea;
+
+    --color_btn_send_message: #1b7fd0;
+    --color_btn_send_message_hover: #caddea;
+
+    --color_btn_oreder_now: #dd0000;
+    --color_btn_oreder_now_hover: #a40000;
+
+    --color_btn_text: #fff;
+    --color_btn_text_hover: #1b7fd0;
+}
+
+@font-face {
+    font-family: Roboto_Bold;
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: Roboto_Medium;
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: Roboto_Regular;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+
+h1{
+    font-family: Roboto_Bold;
+    font-size: 32px;
+    color: var(--color_h1);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+h2{
+    font-family: Roboto_Bold;
+    font-size: 28px;
+    color: var(--color_h2);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+h3{
+    font-family: Roboto_Medium;
+    font-size: 22px;
+    color: var(--color_h3);
+    text-transform: uppercase;
+}
+
+h4{
+    font-family: Roboto_Medium;
+    font-size: 18px;
+    color: var(--color_h4);
+    text-transform: uppercase;
+}
+
+p.text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: var(--color_p_text);
+}

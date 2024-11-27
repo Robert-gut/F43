@@ -1,0 +1,76 @@
+header{
+    background: var(--color_main_2);
+    background-image: url(../../images/Bg1.svg);
+    height: 57px;
+    display: flex;
+    align-items: center;
+}
+
+header .phone{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header .phone span, header .phone a{
+    font-size: 20px;
+    color: #517898;
+    font-weight: 250;
+    font-family: Roboto_Regular;
+}
+
+header .phone a{
+    color: #caddea;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+header .login_and_chat{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header .login, header .live_chat{
+    font-size: 22px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: var(--color_btn_text);
+    font-weight: 400;
+    font-family: Roboto_Regular;
+    text-decoration: none;
+}
+
+header .login::after{
+    content: '';
+    background-image: url(../../images/Login.svg);
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 28px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+
+header .live_chat::after{
+    content: '';
+    background-image: url(../../images/Chat.svg);
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 28px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+
+header .login:hover::after{
+    background-image: url(../../images/Login2.svg);
+}
+header .live_chat:hover::after{
+    background-image: url(../../images/Chat2.svg);
+}
+    
+header .login:hover, header .live_chat:hover{
+    color: var(--color_btn_text_hover);
+}
