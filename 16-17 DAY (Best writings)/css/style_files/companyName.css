@@ -1,12 +1,21 @@
 .baner{
     background-color: #e6edf4;
-}
-
-.baner .bg-img{
     background-image: url(../../images/main_bg_img_heder.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center right;
+}
+
+@media screen and (min-width: 1200px) { 
+    .baner{
+        background-image: none;
+    }
+    .baner .bg-img{
+        background-image: url(../../images/main_bg_img_heder.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center right;
+    }
 }
 
 .baner a img{
