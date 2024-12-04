@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+
+    <form action="" method="post">
+        <label for="firstName">First name</label>
+        <input 
+        id="firstName"
+        type="text"
+        name="firstName"
+        value=""
+        placeholder="Name"
+        autocomplete="on"
+        disabled
+        >
+        <label>
+            <input 
+            id="firstName"
+            type="text"
+            name="firstName"
+            value=""
+            placeholder="Name"
+            autocomplete="on"
+            >
+            First name
+        </label>
+
+        <!--! для пароля  -->
+        <input type="password" placeholder="Password">
+
+        <!--! ДЛЯ ТЕЛЕФОНА  -->
+        <input type="tel" placeholder="phone">
+
+        <!--! ДЛЯ url  -->
+        <input type="url" placeholder="url">
+
+        <!--! ДЛЯ file  -->
+        <input type="file" placeholder="file">
+        <input type="file" multiple placeholder="files">
+
+        <!--! ДЛЯ date  -->
+        <input type="date"><br>
+
+        <!--! ДЛЯ time  -->
+        <input type="time"><br>
+
+        <!--! ДЛЯ date and time  -->
+        <input type="datetime-local"><br>
+
+        <!--! ДЛЯ number  -->
+        <input type="number" min="3" max="9" placeholder="number input"><br>
+
+        <!--! ДЛЯ color  -->
+        <input type="color">
+
+        <!--! ДЛЯ month  -->
+        <input type="month">
+
+        <!--! ДЛЯ weeks  -->
+        <input type="week"><br>
+        
+        <!--! ДЛЯ checkbox  -->
+        <label>
+            <input type="checkbox" >
+            checkbox
+        </label><br>
+
+        <label>
+            <input name="radio" type="radio">
+            radio 1
+        </label><br>
+        <label>
+            <input checked name="radio" type="radio">
+            radio 2
+        </label><br>
+        <label>
+            <input name="radio" type="radio">
+            radio 3
+        </label><br>
+
+        <!--! ДЛЯ діапазона  -->
+        <input type="range" value="0" min="0" max="100" step="5"><br>
+
+        <!--! ДЛЯ email  -->
+        <input type="email" placeholder="email">
+        
+        <!--! ДЛЯ search  -->
+        <input type="search" placeholder="search"><br>
+
+        <textarea name="anyText">sdfgdsfg</textarea><br>
+
+        <select name="" id="">
+            <option value="123">element 1</option>
+            <option value="321">element 2</option>
+            <option value="213">element 3</option>
+        </select><br>
+
+        <input type="reset">
+
+        <input type="button" value="button">
+        <br><input type="submit" value="ok">
+
+        <input type="text">
+
+        <button type="submit">login</button>
+    </form>
+
+
+    <form style="border: 3px solid black; border-radius: 8px;
+    padding: 10px;
+    " action="#" name="login">
+        <label> 
+            Email:
+            <input type="email" placeholder="name@email.com">
+        </label>
+        <label> 
+            Password:
+            <input type="password" placeholder="your pass">
+        </label>
+        <br>
+        <input type="submit" value="Log in">
+    </form>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
