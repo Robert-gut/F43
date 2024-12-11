@@ -1,0 +1,110 @@
+div {
+  background-color: #fff;
+}
+
+body {
+  background-color: aqua;
+}
+
+main {
+  background-color: yellow;
+}
+main .test1 {
+  background-color: pink;
+}
+main .test2 {
+  background-color: rgb(28, 3, 7);
+}
+main article {
+  background-color: red;
+}
+main table {
+  font-size: 50px;
+}
+
+p {
+  color: wheat;
+  font-size: 35px;
+}
+p:hover {
+  font-size: 100px;
+}
+p::after {
+  content: ">>>>>>>>>>>>>";
+}
+p::before {
+  content: "<<<<<<<<<<<<<";
+}
+
+main {
+  background-color: yellow;
+}
+main .test1 {
+  background-color: red;
+  font-size: 35px;
+}
+main .test2 {
+  background-color: rgb(28, 3, 7);
+  font-size: 35px;
+}
+main article {
+  background-color: red;
+  font-size: 35px;
+}
+main table {
+  font-size: 50px;
+  background-color: red;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+body ul, body ol, body li {
+  list-style-type: none;
+}
+
+.input3, .input2, .input1 {
+  display: block;
+  margin: 50px;
+  border: red 2px solid;
+  border-radius: 5px;
+}
+.input3:hover, .input2:hover, .input1:hover {
+  border: red 5px solid;
+}
+
+.input1 {
+  width: 100px;
+}
+
+.input2 {
+  width: 200px;
+}
+
+.input3 {
+  width: 300px;
+}
+
+.mixin .b1 {
+  border: blue 5px solid;
+  border-radius: 0;
+}
+.mixin .b2 {
+  border: red 2px solid;
+  border-radius: 15px;
+}
+.mixin .b3 {
+  border: yellow 8px solid;
+  border-radius: 30px;
+}
+
+p {
+  border: green 10px solid;
+  border-radius: 20px;
+}
+
+.mixin {
+  padding: 20px;
+  margin: 5px;
+}/*# sourceMappingURL=style.css.map */

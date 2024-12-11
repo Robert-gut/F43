@@ -1,0 +1,159 @@
+div{
+    background-color: #fff;
+}
+
+
+//!1 Вложенісьть
+
+body{
+    background-color: aqua;
+}
+
+main{
+    background-color: yellow;
+
+    .test1{
+        background-color: pink;
+    }
+    .test2{
+        background-color: rgb(28, 3, 7);
+    }
+    article{
+        background-color: red;
+    }
+    table{
+        font-size: 50px;
+    }
+} 
+
+// footer{
+//     div{
+//         background-color: blue;
+//         p{
+//             color: red;
+
+//             a{
+//                 color: white;
+//                 font-size: 35px;
+//             }
+//         }
+//     }
+//     ul{
+//         list-style-type: none;
+//     }
+// }
+
+//? псевдокласами і псевдоелементами
+
+// footer div p:hover{
+//     font-size: 100px;
+// }
+
+p{
+    color: wheat;
+    font-size: 35px;
+    &:hover{
+        font-size: 100px;
+    }
+    &::after{
+        content: '>>>>>>>>>>>>>';
+    }
+    &::before{
+        content: '<<<<<<<<<<<<<';
+    }
+}
+
+
+//! 2 Змінні
+
+$font: 35px;
+$fontColor: red;
+$img: url(./img/anypic.png);
+
+
+main{
+    background-color: yellow;
+
+    .test1{
+        background-color: $fontColor;
+        font-size: $font;
+    }
+    .test2{
+        background-color: rgb(28, 3, 7);
+        font-size: $font;
+    }
+    article{
+        background-color: red;
+        font-size: $font;
+    }
+    table{
+        font-size: 50px;
+        background-color: $fontColor;
+    }
+} 
+
+//! 3 імпортів
+
+@import './main.scss';
+
+
+//! 4 шаблони
+
+%allInputs{
+    display: block;
+    margin: 50px;
+    border: $fontColor 2px solid;
+    border-radius: 5px;
+    &:hover{
+        border: $fontColor 5px solid; 
+    }
+}
+
+.input1{
+    width: 100px;
+    @extend %allInputs
+}
+.input2{
+    width: 200px;
+    @extend %allInputs
+}
+.input3{
+    width: 300px;
+    @extend %allInputs
+}
+
+
+//! 5 міксіни
+
+@mixin border($color, $size, $type, $radius){
+    border: $color $size $type;
+    border-radius: $radius;
+}
+
+
+.mixin{
+    .b1{
+        @include border(blue, 5px, solid, 0)
+    }
+    .b2{
+        @include border(red, 2px, solid, 15px)
+    }
+    .b3{
+        @include border(yellow, 8px, solid, 30px)
+    }
+}
+
+p{
+    @include border(green, 10px, solid, 20px)
+}
+
+//!6  матиматичні операції
+$base-padding: 10px;
+
+.mixin{
+    padding: $base-padding * 2;
+    margin: $base-padding / 2;
+}
+
+
+//! for while if else 
