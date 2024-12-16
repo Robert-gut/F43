@@ -1,0 +1,147 @@
+/* ! активний стан елемента  */
+/* button:active{
+  background-color: red;
+  color: white;
+  border: 4px solid blue;
+} */
+
+/*! посилання  */
+/* :any-link{
+  border: 1px solid #ccc;
+  color: red;
+} */
+
+/*! радіо кнопки або чекбокси */
+/* input:checked {
+  margin-left: 25px;
+  border: 1px solid blue;
+} */
+
+
+/*! ltr rtl */
+
+/* :dir(lte){
+  text-align: center;
+} */
+
+/*! інпут який виключений  */
+/* input:disabled{
+  opacity: 0.2;
+  background-color: red;
+} */
+/* 
+/*! empty el  */
+
+/* p:empty{
+  display: none;
+} */
+
+/*! інпут який влючений  */
+/* input:enabled{
+  opacity: 0.2;
+  background-color: rgb(32, 7, 7);
+} */
+
+/*! перший дочірній елемент батьківського ел */
+/* div:first{
+  font-weight: 900;
+} */
+
+/*! перший дочірній елемент  */
+/* div p:first-child{
+  font-weight: 900;
+} */
+
+/* div p:last-child{
+  color: red;
+} */
+
+/*! перший дочірній елемент  по типу ел*/
+/* div p:first-of-type{
+  font-weight: 900;
+}
+div span:first-of-type{
+  color: red;
+} */
+
+/* div span:last-of-type{
+  color: blue;
+} */
+
+/* :fullscreen{
+  background-color: black;
+  color: white;
+}
+
+#fs-toggle:fullscreen {
+  background-color: #faa;
+} */
+
+/*! активний стан елемента  */
+/* button:active{
+  background-color: red;
+  color: white;
+  border: 4px solid blue;
+} */
+
+
+/*! елемент який має фокус */
+/* input:focus{
+  border: 5px solid yellow;
+} */
+
+
+/* a:hover{
+  text-decoration: overline;
+  text-transform: uppercase;
+} */
+
+/* nth-child() */
+
+/* li:nth-child(3n){
+  color: red;
+}
+li:nth-child(5){
+  color: red;
+  font-size: 40px;
+}
+
+li:nth-last-child(1)::marker{
+  color: rgb(51, 0, 255);
+  font-size: 45px;
+}
+
+
+div p:nth-of-type(2){
+  font-size: 30px;
+}
+
+input:required{
+  border: 2px solid greenyellow;
+} */
+
+/* :read-only
+:read-write */
+
+/* :root{
+
+} */
+
+/* input:valid{
+  border: 2px solid red;
+}
+
+a:visited{
+  color: yellow;
+} */
+
+
+input:focus{
+  border: none;
+  outline: none;
+}
+
+
+input:active{
+  border: none;
+}

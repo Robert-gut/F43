@@ -1,0 +1,67 @@
+p::after{
+  content: 'Кінець текста';
+  font-weight: 900;
+}
+/* p::before{
+  content: 'Початок текста';
+  font-weight: 900;
+} */
+
+
+.exemp{
+  width: 200px;
+  height: 100px;
+  background-color: brown;
+  border-radius: 15px;
+  margin: 20px;
+  position: relative;
+  /* box-shadow: 10px 10px 18px 0 black; */
+  filter: drop-shadow(10px 10px 18px black);
+}
+
+.exemp::after{
+  content: '';
+  width: 0;
+	height: 0;
+	border-left: 40px solid transparent;
+	border-right: 0px solid transparent;
+	border-top: 50px solid brown;
+  position: absolute;
+  top: 100px;
+  left: 140px;
+}
+
+/* //////////////////////////////////// */
+
+p::first-line{
+  font-size: 35px;
+  font-weight: 900;
+}
+
+p::first-letter{
+  font-size: 2em;
+  color: red;
+}
+
+
+::selection{
+  background-color: black;
+  color: white;
+}
+/* ::selection{
+  background-color: white;
+  color: white;
+} */
+
+::marker{
+  color: blue;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+
+
+input::placeholder{
+  font-weight: 900;
+  color: blueviolet;
+}
