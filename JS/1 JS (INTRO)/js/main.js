@@ -35,89 +35,89 @@
 
 //!1 number - це числа
 
-const age = 20
-const year = 2000
+// const age = 20
+// const year = 2000
 
-console.log('Age =', age);
-console.log(typeof age);
+// console.log('Age =', age);
+// console.log(typeof age);
 
-console.log('year =', year);
-console.log(typeof year);
+// console.log('year =', year);
+// console.log(typeof year);
 
-//! 2 string - всі символи
+// //! 2 string - всі символи
 
-const firstName = "Bill"
-const lastName = 'Black'
-const email = `admin@gmail.com`
+// // const firstName = "Bill"
+// const lastName = 'Black'
+// const email = `admin@gmail.com`
 
-const sum = '1234567890-!@#$%^&*(_)QWERTYUIqwerty'
-console.log(sum);
+// const sum = '1234567890-!@#$%^&*(_)QWERTYUIqwerty'
+// console.log(sum);
 
-console.log(firstName);
-console.log(lastName);
-console.log(email);
+// console.log(firstName);
+// console.log(lastName);
+// console.log(email);
 
-console.log(typeof firstName);
-console.log(typeof lastName);
-console.log(typeof email);
+// console.log(typeof firstName);
+// console.log(typeof lastName);
+// console.log(typeof email);
 
-//! boolean - true  false
+// //! boolean - true  false
 
-let isActivate = false
-console.log(isActivate);
+// let isActivate = false
+// console.log(isActivate);
 
-isActivate = true
-console.log(isActivate);
+// isActivate = true
+// console.log(isActivate);
 
-console.log(typeof isActivate);
+// console.log(typeof isActivate);
 
-//! undefined - це коли нічого не визначено
+// //! undefined - це коли нічого не визначено
 
-let any
-console.log(any);
-console.log(typeof any);
+// let any
+// console.log(any);
+// console.log(typeof any);
 
-any = 'test'
-console.log(any);
+// any = 'test'
+// console.log(any);
 
-const test = undefined
+// const test = undefined
 
-//! null - це коли нічого не має
+// //! null - це коли нічого не має
 
-const port = null
-const localhost = null
+// const port = null
+// const localhost = null
 
-console.log(port);
-console.log(localhost);
+// console.log(port);
+// console.log(localhost);
 
-// ////////////////////////////////////////////////////////
-const a = 15
-const b = 3
-const c = 23
-
-
-let suma = 0
-console.log('✌️suma --->', suma);
+// // ////////////////////////////////////////////////////////
+// const a = 15
+// const b = 3
+// const c = 23
 
 
-suma = a + b
-console.log('✌️suma + --->', suma);
+// let suma = 0
+// console.log('✌️suma --->', suma);
 
-suma = c - b
-console.log('✌️suma - --->', suma);
 
-suma = a * b
-console.log('✌️suma * --->', suma);
+// suma = a + b
+// console.log('✌️suma + --->', suma);
 
-suma = a / b
-console.log('✌️suma / --->', suma);
+// suma = c - b
+// console.log('✌️suma - --->', suma);
 
-suma = (a + b) * c
-console.log('✌️suma () --->', suma);
+// suma = a * b
+// console.log('✌️suma * --->', suma);
 
-// .....................a........
+// suma = a / b
+// console.log('✌️suma / --->', suma);
 
-console.log(7 % 2);
+// suma = (a + b) * c
+// console.log('✌️suma () --->', suma);
+
+// // .....................a........
+
+// console.log(7 % 2);
 
 // ////////////////////////////////////////////
 
@@ -131,3 +131,9 @@ console.log(7 % 2);
 // const num1 = +prompt('Enter 1 num.')
 // const num2 = +prompt('Enter 2 num.')
 // alert(num1 + num2)
+
+
+const firstName = prompt('Enter your name')
+// alert('Hello '+ firstName)
+// alert('Hello ',firstName)
+alert(`Hello ${firstName}`)
