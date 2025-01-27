@@ -269,3 +269,34 @@ function funtctionForText() {
 }
 
 
+function radius (r){
+    return 3.14 * r**2
+}
+
+console.log(radius(10));
+
+
+
+
+
+
+
+
+
+// function name(число, що робити) {
+    
+//     switch (що робити) {
+//         case метри в фути:
+//             rertun число * 1.1
+//         case метри в фути:
+//             rertun число * 1.1
+//         case метри в фути:
+//             rertun число * 1.1
+//         case метри в фути:
+//             rertun число * 1.1
+//         default:
+//             break;
+//     }
+// }
+
+// console.log(name(100, метри в фути));
