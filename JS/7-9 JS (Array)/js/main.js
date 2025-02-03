@@ -293,9 +293,152 @@
 
 // ............................................
 
-const arr1 = [1,2,3]
-const arr2 = [4,5,6]
-const arr3 = [7,8,9]
+// const arr1 = [1,2,3]
+// const arr2 = [4,5,6]
+// const arr3 = [7,8,9]
 
-const newArray = arr1.concat(...arr2, ...arr3)
-console.log('✌️newArray --->', newArray);
+// const newArray = arr1.concat(...arr2, ...arr3)
+// console.log('✌️newArray --->', newArray);
+
+
+// /////////////////////////////////////////////////////
+
+// function test(){
+
+// }
+
+
+// const obj = {
+//     test: function(){
+//         console.log(1+1);
+//     }
+// }
+
+// obj.test()
+
+// const arr = [1,2,3,4,5,6,7,8]
+
+
+// console.log(arr.push('test'));
+//! Добавляє в кінець
+//! return к-ть ел з новим елементом
+
+
+// console.log(arr.unshift('test2'));
+//! Добавляє в початок
+//! return к-ть ел з новим елементом
+
+
+
+
+// console.log(arr.shift());
+//! видаляє з початку
+//! return видалений ел
+
+// console.log(arr.pop());
+//! видаляє з кінця
+//! return видалений ел
+
+// console.log('✌️arr --->', arr);
+// console.log(arr.splice(1,1, 'test'));
+// ! 1 видяляти  (поч індекс, кількісь видалених ел)(1,1)
+// ! 2 заміняти (поч індекс, кількісь видалених ел, добавлений елемент)(1,1, 'test')
+// ! 3 додавати (поч індекс, кількісь видалених ел 000, добавлений елемент)(1,0, 'test')
+//! return [] - видалених елементів
+// console.log('✌️arr --->', arr);
+
+
+
+
+
+// console.log(arr.slice(2,4))//! вміє копіювати кусок масива
+//!1 Без параметрів робить повну копію масива ()
+//!2 копіювати певну частину масива (початкове, і до якого індекса не включно)(2,4)
+
+
+// console.log(arr.concat(9,10))//! Вміє копіювати весь масив і додавати в кінець (обєднати 2 або більше масива)
+//!1 Без параметрів робить повну копію масива ()
+//!2 Добавляє в кінець скопійованого масива ще ел ([1,2,3],[4,5,6])
+
+
+// /////////////////////////////////////////////////////
+
+
+//? Пошук В Масиві , методи пошуку
+
+// const cars = ['Audi', 'BMW', 'Mazda', 'Renault', 'Skoda', 'Toyota', 'Tesla', 'Mazda']
+// console.log('✌️cars --->', cars);
+
+// function search(auto) {
+//     for (let i = 0; i < cars.length; i++) {
+//         if(auto === cars[i]){
+//             return true
+//         }
+//     }
+//     return false
+// }
+
+
+//! 1 indexof() вертає перший знайдений індекс ел. і -1 якщо нічого не знайдено
+
+// console.log(cars.indexOf('bmw'))//-1
+// console.log(cars.indexOf('BMW'))// 1
+// console.log(cars.indexOf('Renault'))// 3
+// console.log(cars.indexOf('Mazda', 4))// from index з якого індекса почати пошук
+
+// const auto = cars[cars.indexOf('Mazda')]
+// console.log('✌️auto --->', auto);
+
+//* lastIndexof почінає шукати з кінця
+// console.log(cars.lastIndexOf('Mazda'))
+
+//! 2 includes() вертає першому знайденому ел. True і якщо нічого не знайдено false
+
+// console.log(cars.includes('Mazda'));//true
+// console.log(cars.includes('Nisan'));//false
+
+// console.log(cars.includes('Audi', 3));//false
+
+
+// if(cars.includes('Nisan')){
+
+// }else{
+    
+// }
+
+//!3  a)find , b)findIndex, c)filter
+
+const cars = [
+    {brand: 'Audi', power: 240},
+    {brand: 'BMW', power: 181},
+    {brand: 'Mazda', power: 194},
+    {brand: 'Renault', power: 130},
+    {brand: 'Mazda', power: 194},
+]
+
+//? a)find вертає перший знайдени обєкт який відповідає певній умові
+
+// console.log(cars.find((value,index,object)=>{
+//     console.log(`${object} ${index} ${value}`);
+// }));
+console.log(cars.find((car)=>{ return car.brand === 'Mazda'}))//{}
+console.log(cars.find((car)=>{ return car.brand === 'Mazda 6'}))//undefined
+
+console.log(cars.find((car)=>{ return car.power === 240}))//{}
+console.log(cars.find((car)=>{ return car.power > 150}))//{}
+
+
+
+//? b)findIndex - вертає індекс першого знайденого ел або -1
+
+console.log(cars.findIndex((car)=>{ return car.brand === 'Mazda'}))//2
+console.log(cars.findIndex((car)=>{ return car.brand === 'Mazda 6'}))//-1
+
+
+//? c)filter - вертає всі знайдені елементи по певні умові у форматі [] 
+
+
+console.log(cars.filter((car) => {return car.power > 150}));
+
+// phones.filter((phone)=> {return phone.isNew === false})
+// phones.filter((phone)=> {return phone.cost > 10000 && phone.cost < 20000})
