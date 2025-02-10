@@ -579,11 +579,21 @@
 // cars.forEach(car => {console.log(car.toUpperCase())})
 
 //! reduce()
+// const test = [1,2,34,54,65,67,67,78,89,89,98]
+
+// const arr = [{test: 3},{test: 2},{test: 1}]
+
 // test.reduce((previousValue, num, index, arr)=>{
-    
+//      num.key
 // }, 0)
 
-// const test = [1,2,34,54,65,67,67,78,89,89,98]
+// console.log(arr.reduce((previousValue, num) => previousValue + num.test , 0))
+
+// arr.reduce((p,v,i,a)=>{return p + v.test},0)
+
+// arr.map((v,i,a)=>{})
+// arr.forEach((v,i,a)=>{})
+
 
 // function plus(arr) {
 //     let suma = 0
@@ -614,3 +624,11 @@
 
 // console.log(Array.isArray([1,2,3]));
 
+// const st = ['q', 'w', 'e']
+
+// st.map((st, index) => {
+//      return{id: index + 1, stName: st}
+// })
+// st.map((st, index) => {
+//      return[st]
+// })
