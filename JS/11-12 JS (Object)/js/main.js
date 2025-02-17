@@ -461,3 +461,19 @@ const arrPerson = ['Robert','Barnabishvili','gmail.com',['Fron-end', 'Back-end',
 
 // console.log(Object.keys(car).length)
 
+// function addCar(name, model) {
+//     if(name.legth === 0 && model === 0){
+//         console.log('r')
+//         return
+//     }
+//     const newCar = {name, model}
+//     cars.push(newCar)
+// }
+
+// addCar()
+
+// const arr = [1,2,3]
+
+// console.log([...arr].sort((a,b)=> b - a));
+// console.log(arr);
+
