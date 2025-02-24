@@ -1,0 +1,25 @@
+main{
+    display: flex;
+    justify-content: center;
+}
+input{
+    margin-right: 30px;
+}
+
+ul{
+    list-style-type: none;
+    columns: 4;
+    font-size: 20px;
+}
+
+.class{
+
+}
+
+#id{
+
+}
+
+table, tr, td, th{
+  border: 1px solid black;
+}
