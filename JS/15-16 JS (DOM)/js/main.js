@@ -179,3 +179,126 @@ cars.forEach(car => {
   )
 })
 
+
+
+//? //////////////////////////////////////////////////////////////////////////
+
+//! переміщення ел
+
+// console.log(elementTable);
+
+document.querySelector('input').after(elementTable)
+
+//! копіювання ел cloneNode(true)
+
+// const copyTable = elementTable.cloneNode()
+const copyTable = elementTable.cloneNode(true)
+
+document.querySelector('input').before(copyTable)
+
+//! видалення ел .remove()
+
+// copyTable.outerHTML = ''
+
+copyTable.remove()
+
+
+//? сss style class керування стилями 
+
+
+//! class 
+const h1 = document.querySelector('h1')
+const body = document.body
+
+//! className 
+console.log(h1.className);
+
+// document.querySelector('h1').className = 'time'
+// console.log(document.querySelector('h1').className);
+
+console.log(h1.className);
+
+//! classList
+console.log(h1.classList);
+
+//? classList.add() - Добавляє клас або декілька класав
+h1.classList.add('show', 'font')
+
+//? classList.remove() - видаляж клас або декілька класав
+h1.classList.remove('show', 'font')
+
+//? classList.contains() - перевіряє чи такий клас інснує в ел
+console.log(h1.classList.contains('show', 'font'));
+console.log(h1.classList.contains('title'));
+
+//? classList.toggle() - якщо клас є він його видаля якщо такого класа не має він його добавляє
+
+h1.addEventListener('click', ()=>{
+  h1.classList.toggle('color')
+  body.classList.toggle('bg')
+})
+
+// ! ///////////////////////////////////////////////
+
+//? style el
+console.log(elementTable.style);
+
+elementTable.style.backgroundColor = 'blue'
+elementTable.style.color = 'white'
+elementTable.style.margin = '50px 100px'
+
+console.log(elementTable.style.margin);
+
+
+const p = document.querySelector('p')
+
+console.log(p.style.margin);
+console.log(p.style.fontSize);
+
+
+//! getComputedStyle() - получіти знаячення стилів
+
+console.log(getComputedStyle(p).fontSize);
+console.log(getComputedStyle(p).margin);
+
+
+
+//! parseInt() відкидає назву одиниць вимірювання і робить number
+p.style.fontSize = parseInt(getComputedStyle(p).fontSize) + 10 + 'px'
+console.log(parseInt(getComputedStyle(p).fontSize) + 10);
+
+
+//! cssText
+console.log('✌️p --->', p.style.cssText);
+
+p.style.cssText = `
+  color: red;
+  text-align: center;
+  background: black;
+`
+
+
+//? Атрибути
+
+const a = document.querySelector('a')
+
+console.log(a.href);
+a.href = 'https://instagram.com'
+console.log(a.href);
+
+console.log(document.querySelector('input').value);
+
+//! Arrtibyte()
+//! has get rem set
+
+console.log(a.hasAttribute('href'));//превірку на атрибут
+
+console.log(a.getAttribute('href'));//дай значення цього атрибута
+
+
+console.log(a.setAttribute('href', 'https://wikipedia.ua'));//+++ значення цього атрибута
+
+console.log(a.removeAttribute('href'));//--- значення цього атрибута
+
+console.log(a.href);
+
