@@ -1,0 +1,119 @@
+body{
+  background: linear-gradient(135deg, #d7aafc 0%, #519bf4 100%);
+  background-repeat: no-repeat;
+  height: 98.3vh;
+  font-family: cursive;
+}
+
+main{
+  width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  height: 95vh;
+}
+
+h1{
+  background: #a357e2;
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+h1 img{
+  margin-left: 40px;
+  width: 60px;
+  cursor: pointer;
+}
+
+input{
+  background-color: #fff;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  font-size: 25px;
+  border: 3px solid gray;
+  color: gray;
+}
+
+input:focus{
+  border-color: #a357e2;
+  outline: none;
+}
+
+ul{
+  list-style-type: none;
+  font-size: 34px;
+  height: 71%;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: rgb(230, 229, 229);
+}
+
+ul li:nth-child(2n) {
+  background: rgb(201, 201, 201);
+}
+
+ul img{
+  width: 32px;
+  cursor: pointer;
+}
+
+span{
+  margin-right: 15px;
+  width: 0;
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+ul li:hover span{
+  width: 40px;
+  opacity: 1;
+  margin-left: 10px;
+}
+
+
+.btnGrop1, .btnGrop2{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btnGrop1 button{
+  font-size: 30px;
+  padding: 5px 20px; 
+  background: #a357e2;
+  cursor: pointer;
+  color: white;
+  font-family: cursive;
+  margin: 2px;
+}
+.btnGrop2 button{
+  font-size: 30px;
+  padding: 5px 25px; 
+  background: #a357e2;
+  cursor: pointer;
+  color: white;
+  font-family: cursive;
+  margin: 2px;
+}
+.btnGrop1 button:hover, .btnGrop2 button:hover{
+  background: #ffffff;
+  color: black;
+}
+
+.displayNone{
+  display: none;
+}
+
+.done{
+  text-decoration: line-through;
+  color: grey;
+}

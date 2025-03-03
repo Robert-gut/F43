@@ -302,3 +302,4 @@ console.log(a.removeAttribute('href'));//--- значення цього атр�
 
 console.log(a.href);
 
+input.addEventListener('change',)
