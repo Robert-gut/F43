@@ -79,7 +79,11 @@ function draw() {
 function gameLoop(){
   update()
   draw()
-  setTimeout(gameLoop, 200)
+  setTimeout(gameLoop, 70)
 }
 
-gameLoop()
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    gameLoop()
+  }
+})
