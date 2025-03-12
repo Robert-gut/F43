@@ -32,12 +32,17 @@ function startGame(){
 
 }
 
+function randomColor() {
+  return `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`
+}
+
 function createCircle() {
+  const color = randomColor()
   const circle = document.createElement('div')
   circle.className = 'circle'
   circle.style.top = `${Math.floor(Math.random() *  (gameContainer.clientHeight - 70))}px`
   circle.style.left = `${Math.floor(Math.random() *  (gameContainer.clientWidth - 70))}px`
-  circle.style.background = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`
+  circle.style.background = color
   timeout = setTimeout(()=>{
     circle.remove()
     createCircle()
@@ -47,6 +52,7 @@ function createCircle() {
     if (isActive) {
       score++
       document.getElementById('score').textContent = `Score: ${score}`
+      document.body.style.background = color
       
       // circle.remove()
       // clearTimeout(timeout)
