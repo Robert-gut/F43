@@ -43,7 +43,7 @@ const server = http.createServer((req, res) => {
         return
     }
 
-    if(method === 'GET' && path.startsWith === '/cars/'){
+    if(method === 'GET' && path.startsWith('/cars/')){
         const car = db.cars.find(car => car.id === +id)
         if(!car){
             res.writeHead(404)
@@ -72,6 +72,39 @@ const server = http.createServer((req, res) => {
         })
         return
     }
+
+    if(method === 'DELETE' && path.startsWith('/cars/')){
+        const carIndex = db.cars.findIndex(car => car.id === +id)
+        if(carIndex === -1){
+            res.writeHead(404)
+            res.end()
+            return
+        }
+        const deletedCar = db.cars.splice(carIndex, 1)[0]
+        res.writeHead(200)
+        res.end(JSON.stringify(deletedCar))
+        return
+    }
+
+    if(method === 'PUT' && path.startsWith('/cars/')){
+        let body = ''
+        req.on('data', chunk => {body += chunk})
+        req.on('end', () => {
+            const {brand, power} = JSON.parse(body)
+            const car = db.cars.find(car => car.id === +id)
+            if(!brand || !power){
+                res.writeHead(404)
+                res.end()
+                return
+            }
+           car.brand = brand
+           car.power = power
+            res.writeHead(200)
+            res.end(JSON.stringify(car))
+        })
+        return
+    }
+
 
 
     res.writeHead(404)

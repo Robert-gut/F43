@@ -124,3 +124,19 @@ Promise.resolve('cl 3 promise').then((info)=> {console.log(info)})
 
 console.log('5');
 
+
+
+
+function test(a) {
+    return new Promise((res, rej) =>{
+        res(a)
+        // rej('err')
+    })
+}
+
+test('123')
+.then((b)=>{
+    console.log(b);
+})
+.catch()
+.finally()
