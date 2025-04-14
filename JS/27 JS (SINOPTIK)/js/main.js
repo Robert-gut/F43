@@ -6,7 +6,7 @@ search.addEventListener('click',() => {fetchData(generateURL())})
 function generateURL() {
     const cityName = document.querySelector('input').value
     const mainUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&lang=${navigator.languages[2]}&appid=33a4edb2fe337fd387e632012d97d0de`
-    
+
     const mainUrlposition = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=${navigator.languages[2]}&appid=33a4edb2fe337fd387e632012d97d0de`
     return mainUrl
 }
