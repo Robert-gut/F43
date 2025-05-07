@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Перевірка пристроїв</h1>
+
+    <section>
+      <h2>Інформація про користувача</h2>
+      <pre id="userData">Завантаження...</pre>
+    </section>
+  
+    <section id="speaker-check">
+      <h2>Перевірка динаміків</h2>
+      <button onclick="checkSpeakers()">🔊 Перевіріти динамікі</button>
+      <p id="speaker-status">Очікування...</p>
+      <audio id="speaker-sound" src="./slot-machine-102137.mp3" preload="auto"></audio>
+    </section>
+
+    <section id="mic-check">
+      <h2>Перевірка мікрофона</h2>
+      <button onclick="startRecording()">🎙️ Записати</button>
+      <button onclick="playRecording()">🔊 Відтворити</button>
+      <p id="mic-status">Очікування запису...</p>
+      <audio id="mic-playback" controls style="display: none;"></audio>
+    </section>
+
+    <section id="cam-check">
+      <h2>Перевірка веб-каменри</h2>
+      <button onclick="checkCamera()">📷 Перевірити камеру</button><Br>
+      <video id="cameraPreview" autoplay playsinline></video>
+      <p id="cam-status">Очікування...</p>
+    </section>
+    
+    <section id="geo-check">
+      <h2>Перевірка геолокації</h2>
+      <button onclick="checkGeolocation()">📍 Отримання геолокації</button><Br>
+      <p id="geo-status">Очікування...</p>
+    </section>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
