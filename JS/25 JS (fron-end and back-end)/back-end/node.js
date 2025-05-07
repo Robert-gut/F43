@@ -43,7 +43,7 @@ const server = http.createServer((req, res) => {
         return
     }
 
-    if(method === 'GET' && path.startsWith === '/cars/'){
+    if(method === 'GET' && path.startsWith('/cars/')){
         const car = db.cars.find(car => car.id === +id)
         if(!car){
             res.writeHead(404)
