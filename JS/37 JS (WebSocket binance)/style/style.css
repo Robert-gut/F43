@@ -1,0 +1,12 @@
+#messages{
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+.trade {
+    font-size: 30px;
+    color: #555;
+}
