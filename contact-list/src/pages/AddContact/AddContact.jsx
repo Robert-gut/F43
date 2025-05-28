@@ -6,7 +6,7 @@ import { Formik, Form, Field, ErrorMessage, validateYupSchema } from 'formik'
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router";
 
-export default function AddContact() {
+export default function AddContact({ addNewContact }) {
     const navigate = useNavigate();
 
     const initialValues = {
@@ -22,8 +22,8 @@ export default function AddContact() {
     }
 
     const validationSchema = Yup.object().shape({
-        firstName: Yup.string().required('First Name is required').min(2, 'Min 2 symbols').max(10, 'Max 10 symbols'),
-        lastName: Yup.string().required('Last Name is required').min(2, 'Min 2 symbols').max(10, 'Max 10 symbols'),
+        firstName: Yup.string().required('First Name is required').min(2, 'Min 2 symbols').max(16, 'Max 16 symbols'),
+        lastName: Yup.string().required('Last Name is required').min(2, 'Min 2 symbols').max(16, 'Max 16 symbols'),
         phone: Yup.string().required('Phone is required'),
         email: Yup.string().email('Invalid email').required('Email is required'),
         avatar: Yup.string().required('Avatar is required'),
@@ -35,10 +35,12 @@ export default function AddContact() {
 
     const handleSubmin = (values) => {
         console.log(values);
+        addNewContact(values)
         navigate('/')
     }
 
     return(
+        
         <div className="container">
             <div className="modal-content addPage rounded shadow">
                 <div className="modal-header">
@@ -69,7 +71,7 @@ export default function AddContact() {
                             </div>
                             <div className='mb-5'>
                                 <label htmlFor="avatar">Avatar</label>
-                                <Field type='text' name='avatar' id='avatar'/>
+                                <Field type='number' max={99} min={0} name='avatar' id='avatar'/>
                                 <ErrorMessage name='avatar' component='p' className='text-danger position-absolute'/>
                             </div>
                             <div className='mb-5'>
