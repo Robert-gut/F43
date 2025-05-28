@@ -1,4 +1,4 @@
-export default function ContactItem({ stor }) {
+export default function ContactItem({ stor, deleteContact }) {
     return(
         <div>
             {stor.map(contact => (
@@ -10,7 +10,7 @@ export default function ContactItem({ stor }) {
                         <p>{contact.phone}</p>
                         <p>{contact.status}</p>
                     </div>
-                    <button>del</button>
+                    <button onClick={() => deleteContact(contact.id)}>del</button>
                 </div>
             ))}
         </div>
