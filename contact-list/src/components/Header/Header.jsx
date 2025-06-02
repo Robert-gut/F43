@@ -2,10 +2,10 @@ import { Link } from "react-router";
 
 export default function Header() {
     return(
-        <header className="container">
+        <header className="container rounded shadow-lg bg-white mb-3 mt-3">
             <div className="row">
                 <div className="col-12">
-                    <nav className="navbar bg-body-tertiary rounded shadow">
+                    <nav className="navbar bg-body-tertiary ">
                         <div className="container-fluid">
                            <div className="navbar-brand">
                             <Link className="navbar-brand" to="/">

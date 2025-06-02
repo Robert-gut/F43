@@ -3,7 +3,8 @@ import { useState } from "react";
 
 export default function NotFound() {
     const [count, setCount] = useState(0)
-    
+
+
     return(
         <div className="container">
             <h1>NotFound</h1>
