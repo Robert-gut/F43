@@ -1,8 +1,8 @@
 import { Link } from "react-router";
 
-export default function Header() {
+export default function Header({searchBySymbols}) {
     return(
-        <header className="container rounded shadow-lg bg-white mb-3 mt-3">
+        <header className="container rounded shadow-lg bg-white mb-3 mt-3 ">
             <div className="row">
                 <div className="col-12">
                     <nav className="navbar bg-body-tertiary ">
@@ -17,8 +17,7 @@ export default function Header() {
                            </div>
 
                             <form className="d-flex" role="search">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                                <button className="btn btn-outline-success" type="submit">Search</button>
+                                <input onInput={e => searchBySymbols(e.target.value)} className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                             </form>
                         </div>
                     </nav>
