@@ -1,10 +1,16 @@
 import { Link } from "react-router"
 import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteContact } from '../../redux/actions'
 
-export default function ContactItem({ stor, deleteContact }) {
+export default function ContactItem() {
+  const contacts = useSelector(state => state.contacts)
+  const dispatch = useDispatch()
 
-  const filteredContacts = stor.search ? stor.contacts.filter(contact => `${contact.firstName} ${contact.lastName} ${contact.email} ${contact.phone}`.toLowerCase().includes(stor.search.toLowerCase()) ) : stor.contacts
+  const search = false
+
+  const filteredContacts = search ? contacts.filter(contact => `${contact.firstName} ${contact.lastName} ${contact.email} ${contact.phone}`.toLowerCase().includes(stor.search.toLowerCase()) ) : contacts
 
   return(
     <div>
@@ -31,7 +37,7 @@ export default function ContactItem({ stor, deleteContact }) {
             <td className="fs-5 text-uppercase fw-bold">{contact.gender}</td>
             <td>
               <Link to={`/edit-contact/${contact.id}`}><FaRegEdit size={'50px'} color="yellow"/></Link>
-              <MdDeleteForever style={{cursor: 'pointer'}} size={'50px'} color="red" onClick={() => deleteContact(contact.id)}/>
+              <MdDeleteForever style={{cursor: 'pointer'}} size={'50px'} color="red" onClick={() => dispatch(deleteContact(contact.id))}/>
             </td>
           </tr>
         ))}

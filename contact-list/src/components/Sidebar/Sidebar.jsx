@@ -1,6 +1,7 @@
-export default function Sidebar({stor}) {
-
-  const totalContacts = stor.contacts.length
+import { useSelector } from "react-redux";
+export default function Sidebar() {
+  const contacts = useSelector(state => state.contacts)
+  const totalContacts = contacts.length
 
   const statusCounts = {
     work: 0,
@@ -10,7 +11,7 @@ export default function Sidebar({stor}) {
     others: 0
   }
 
-  stor.contacts.forEach(contact => {
+  contacts.forEach(contact => {
     statusCounts[contact.status] +=1
   });
   
