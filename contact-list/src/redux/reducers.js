@@ -1,7 +1,9 @@
 import {
     ADD_CONTACT,
     DELETE_CONTACT,
-    EDIT_CONTACT
+    EDIT_CONTACT,
+    TOGGLE_FAVORITE,
+    SEARCH_CONTACT,
 } from './type'
 
 const intialState = {
@@ -117,7 +119,14 @@ const intialState = {
           favorite: true,
         },
       ],
-    search: '',
+    searchTerm: '',
+    contactStatuss: {
+      work: {count: 0, bg: '#F39F5A'},
+      family: {count: 0, bg: '#AE445A'},
+      private: {count: 0, bg: '#662549'},
+      friends: {count: 0, bg: '#451952'},
+      others: {count: 0, bg: '#00FA9A'},
+    }
 }
 
 const reducer = (state = intialState, action) => {
@@ -144,6 +153,16 @@ const reducer = (state = intialState, action) => {
                     }
                     return contact
                 })
+            }
+        case TOGGLE_FAVORITE:
+            return{
+              ...state,
+              contacts: state.contacts.map(contact => contact.id === action.payload ? {...contact, favorite: !contact.favorite} : contact,)
+            }
+        case SEARCH_CONTACT:
+            return{
+              ...state,
+              searchTerm: action.payload
             }
         default:
             return state

@@ -2,6 +2,10 @@ import { useState } from "react";
 
 
 export default function NotFound() {
+
+    fetch()
+
+
     const [count, setCount] = useState(0)
 
     const [delModal, setDelModal] = useState(false)

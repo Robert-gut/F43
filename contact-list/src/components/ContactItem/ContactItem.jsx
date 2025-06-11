@@ -1,16 +1,17 @@
+import './ContactItem.scss'
 import { Link } from "react-router"
 import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContact } from '../../redux/actions'
+import { deleteContact, toggleFavorite } from '../../redux/actions'
 
 export default function ContactItem() {
   const contacts = useSelector(state => state.contacts)
+  const searchTerm = useSelector(state => state.searchTerm)
   const dispatch = useDispatch()
 
-  const search = false
 
-  const filteredContacts = search ? contacts.filter(contact => `${contact.firstName} ${contact.lastName} ${contact.email} ${contact.phone}`.toLowerCase().includes(stor.search.toLowerCase()) ) : contacts
+  const filteredContacts = searchTerm ? contacts.filter(contact => `${contact.firstName} ${contact.lastName} ${contact.email} ${contact.phone}`.toLowerCase().includes(searchTerm.toLowerCase()) ) : contacts
 
   return(
     <div>
@@ -28,8 +29,11 @@ export default function ContactItem() {
         <tbody>
         {filteredContacts.map(contact => (
             <tr key={contact.id} className="align-middle text-center">
-            <td scope="row">
-              <img className="rounded-circle" src={`https://randomuser.me/api/portraits/${contact.gender}/${contact.avatar}.jpg`} alt="" />
+            <td className='position-relative' scope="row">
+              <img className={`rounded-circle border border-3 ${contact.gender === 'women'? 'border-danger' : 'border-primary'}`} src={`https://randomuser.me/api/portraits/${contact.gender}/${contact.avatar}.jpg`} alt="" />
+              <button className="favoriteBtn" onClick={()=> dispatch(toggleFavorite(contact.id))}>
+                {contact.favorite ? '♥' : '♡'}
+              </button>
             </td>
             <td className="fs-4">{contact.firstName}<br/>{contact.lastName}</td>
             <td className="fs-5">{contact.phone}<br/>{contact.email}</td>

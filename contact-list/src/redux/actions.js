@@ -1,7 +1,9 @@
 import {
     ADD_CONTACT,
     DELETE_CONTACT,
-    EDIT_CONTACT
+    EDIT_CONTACT,
+    TOGGLE_FAVORITE,
+    SEARCH_CONTACT,
 } from './type'
 
 export const addContact = (newContact) => {
@@ -25,3 +27,16 @@ export const editContact = (id, updatedContact) => {
     }
 }
 
+export const toggleFavorite = (id) => {
+    return{
+        type: TOGGLE_FAVORITE,
+        payload: id
+    }
+}
+
+export const searchContact = (searchTerm) => {
+    return{
+        type: SEARCH_CONTACT,
+        payload: searchTerm.toLowerCase()
+    }
+}
