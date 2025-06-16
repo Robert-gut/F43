@@ -4,6 +4,8 @@ import {
     EDIT_CONTACT,
     TOGGLE_FAVORITE,
     SEARCH_CONTACT,
+    DELETE_STATUS,
+    ADD_STATUS,
 } from './type'
 
 const intialState = {
@@ -164,6 +166,40 @@ const reducer = (state = intialState, action) => {
               ...state,
               searchTerm: action.payload
             }
+        case DELETE_STATUS: {
+          const newContactStatussAfterDelete = {...state.contactStatuss}
+          const deleteContactStatus = newContactStatussAfterDelete[action.payload].count
+          delete newContactStatussAfterDelete[action.payload]
+
+          const contactsAfterStatusDelete = state.contacts.map(contact => {
+            if(contact.status === action.payload){
+              return {...contact, status: 'others'}
+            }
+            return contact
+          })
+
+          if(newContactStatussAfterDelete['others']){
+            newContactStatussAfterDelete['others'].count += deleteContactStatus
+          }
+
+          return{
+            ...state,
+            contactStatuss: newContactStatussAfterDelete,
+            contacts: contactsAfterStatusDelete
+          }
+        }
+        case ADD_STATUS:
+          if(state.contactStatuss[action.payload.status]){
+            console.worn(`Status "${action.payload.status}" already exists.`)
+            return state
+          }
+          return{
+            ...state,
+            contactStatuss: {
+              ...state.contactStatuss,
+              [action.payload.status]: {count: 0, bg: action.payload.bg}
+            }
+          }
         default:
             return state
     }

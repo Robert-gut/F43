@@ -4,6 +4,8 @@ import {
     EDIT_CONTACT,
     TOGGLE_FAVORITE,
     SEARCH_CONTACT,
+    DELETE_STATUS,
+    ADD_STATUS,
 } from './type'
 
 export const addContact = (newContact) => {
@@ -38,5 +40,20 @@ export const searchContact = (searchTerm) => {
     return{
         type: SEARCH_CONTACT,
         payload: searchTerm.toLowerCase()
+    }
+}
+
+export const deleteStatus = (status) => {
+    return{
+        type: DELETE_STATUS,
+        payload: status,
+    }
+}
+
+export const addStatus = (status, color) => {
+    console.log(status, color);
+    return{
+        type: ADD_STATUS,
+        payload: {status, color},
     }
 }

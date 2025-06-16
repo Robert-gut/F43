@@ -1,13 +1,15 @@
 import { useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
 import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
+import { deleteStatus } from "../../redux/actions";
 
 
 export default function ContactStatuss(){
     const contactStatuss = useSelector(state => state.contactStatuss)
     const contacts = useSelector(state => state.contacts)
+    const dispatch = useDispatch()
 
     const statusCounts = useMemo(() => {
         const counts = {...contactStatuss}
@@ -17,6 +19,10 @@ export default function ContactStatuss(){
         });
         return counts
       }, [contacts, contactStatuss])
+
+    const handleDeleteStatus = (status) =>{
+        dispatch(deleteStatus(status))
+    }
 
     return(
         <main className="container rounded bg-white shadow-lg">
@@ -42,7 +48,7 @@ export default function ContactStatuss(){
                                 <td className="fs-4 fw-bold">{statusCounts[status].count}</td>
                                 <td>
                                 <Link to={`/edit-contact`}><FaRegEdit size={'50px'} color="yellow"/></Link>
-                                <MdDeleteForever style={{cursor: 'pointer'}} size={'50px'} color="red" onClick={() => {}}/>
+                                <MdDeleteForever style={{cursor: 'pointer'}} size={'50px'} color="red" onClick={() => {handleDeleteStatus(status)}}/>
                                 </td>
                             </tr>
                         ))}
