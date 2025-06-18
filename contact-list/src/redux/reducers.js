@@ -197,7 +197,7 @@ const reducer = (state = intialState, action) => {
             ...state,
             contactStatuss: {
               ...state.contactStatuss,
-              [action.payload.status]: {count: 0, bg: action.payload.bg}
+              [action.payload.status]: {count: 0, bg: action.payload.color}
             }
           }
         default:

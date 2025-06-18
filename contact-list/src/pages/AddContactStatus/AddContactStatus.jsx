@@ -11,7 +11,6 @@ export default function AddContactStatus() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(statusName, color);
         dispatch(addStatus(statusName, color))
         navigate('/contact-statuss')
     }

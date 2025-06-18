@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useReducer, useRef, useState } from "react";
 
 
 export default function NotFound() {
-    //!1 useStaete - зберігає стан компонента [стан, змінити стан]
+    //!1 useState - зберігає стан компонента [стан, змінити стан]
     const [count, setCount] = useState(0)
 
     const handleClick = () => {
@@ -51,14 +51,99 @@ export default function NotFound() {
     //     setTimer(timer + 1)
     // }, 1000)
 
-    useEffect(()=>{
-        const tim = setInterval(()=>{
-            console.log('test');
-            setTimer(timer + 1)
-        }, 1000) 
-        return () => clearInterval(tim)
-    },[])
+    // useEffect(()=>{
+    //     const tim = setInterval(()=>{
+    //         console.log('test');
+    //         setTimer(timer + 1)
+    //     }, 1000) 
+    //     return () => clearInterval(tim)
+    // },[])
 
+    //? useMemo and useCallback оптимізації продуктивнося
+    //! useMemo - для обрахунків
+    // const statusCounts = useMemo(() => {
+    //     const counts = {...contactStatuss}
+    //     Object.keys(counts).forEach(status => (counts[status].count = 0))
+    //     contacts.forEach(contact => {
+    //       contactStatuss[contact.status].count++
+    //     });
+    //     return counts
+    // }, [contacts, contactStatuss])
+
+    //! 4 useCallback - для функцій
+    // const handleTextChange = useCallback((e) => {
+    //     console.log('test');
+    // },[])
+
+    //! 5 useContext - отримання значень із контекста
+
+    // const ThemeContext = createContext(null) // це початкове значення
+
+    // function ThemeProvider({ children }) {
+    //     const [theme, setTheme] = useState('light')
+
+    //     const toggleTheme = () =>{
+    //         setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'))
+    //     }
+
+    //     const contextValue = {theme, toggleTheme}
+
+    //     return(
+    //       <ThemeContext.Provider value={contextValue}>
+    //         {children}
+    //       </ThemeContext.Provider>
+    //     )
+    // }
+
+    // function ThemedButton() {
+    //     const {theme, toggleTheme} = useContext(ThemeContext)
+
+    //     return(
+    //         <button
+    //            onClick={toggleTheme}
+    //            style={{
+    //             backgroundColor: theme === 'dark' ? '#333' : '#eee'
+    //            }} 
+    //         >поточна тема: {theme}</button>
+    //     )
+    // }
+
+       // app.jsx
+
+    //    function App() {
+    //     return(
+    //         <ThemeProvider>
+    //             <div>
+    //                 <h1>Демонстрація useContext</h1>
+    //                 <ThemedButton/>
+    //             </div>
+    //         </ThemeProvider>
+    //     )
+    // }
+
+    //!6 useReducer - керування складними станами
+
+    function counterReducer(state, actions) {
+        switch (actions.type) {
+            case 'increment':
+                return {count: state.count + 1}
+            case 'decrement':
+                return {count: state.count - 1}
+            case 'reset':
+                return {count: 0}
+            default:
+                throw new Error(`unknown action`);
+        }
+    }
+
+    const [state, dispatch] = useReducer(counterReducer, {count: 0})
+
+
+    //!7 useRef - змінна яка зберігаєть і не викликає рендер
+    const inputRef = useRef(null)
+    const handleFocus = () => {
+        inputRef.current.focus()
+    }
 
     return(
         <div className="container">
@@ -73,6 +158,16 @@ export default function NotFound() {
 
             <h3>3. useMemo</h3>
             <span>Sidebar, ContactStatuss</span>
+
+            <h3>6. useReducer</h3>
+            <h5>{state.count}</h5>
+            <button onClick={()=>dispatch({type: 'increment'})}>+</button>
+            <button onClick={()=>dispatch({type: 'decrement'})}>-</button>
+            <button onClick={()=>dispatch({type: 'reset'})}>reset</button>
+
+            <h3>7. useRef</h3>
+            <input type="text" ref={inputRef}/>
+            <button onClick={handleFocus}>focus</button>
         </div>
     )
 }

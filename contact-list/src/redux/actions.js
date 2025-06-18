@@ -51,7 +51,6 @@ export const deleteStatus = (status) => {
 }
 
 export const addStatus = (status, color) => {
-    console.log(status, color);
     return{
         type: ADD_STATUS,
         payload: {status, color},

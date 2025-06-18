@@ -3,10 +3,11 @@ import { Formik, Form, Field, ErrorMessage} from 'formik'
 import {contactValidationSchema} from '../../validation/validation'
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/actions';
 
 export default function AddContact() {
+    const contactStatuss = useSelector(state => state.contactStatuss)
     const navigate = useNavigate();
     const dispatch = useDispatch()
 
@@ -75,11 +76,9 @@ export default function AddContact() {
                                 <label htmlFor="status">Status</label>
                                 <Field className='form-control fs-5' as='select' name='status'>
                                     <option value="">Choose status</option>
-                                    <option value="work">Work</option>
-                                    <option value="family">Family</option>
-                                    <option value="friends">Friends</option>
-                                    <option value="private">Private</option>
-                                    <option value="others">Others</option>
+                                    {Object.keys(contactStatuss).map(status=> (
+                                        <option style={{background: contactStatuss[status].bg}} key={status} value={status}>{status}</option>
+                                    ))}
                                 </Field>
                                 <ErrorMessage name='status' component='p' className='text-danger position-absolute'/>
                             </div>
