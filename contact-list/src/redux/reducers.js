@@ -6,6 +6,7 @@ import {
     SEARCH_CONTACT,
     DELETE_STATUS,
     ADD_STATUS,
+    EDIT_STATUS,
 } from './type'
 
 const intialState = {
@@ -186,6 +187,32 @@ const reducer = (state = intialState, action) => {
             ...state,
             contactStatuss: newContactStatussAfterDelete,
             contacts: contactsAfterStatusDelete
+          }
+        }
+        case EDIT_STATUS: {
+          if(!state.contactStatuss[action.payload.oldStatus]){
+            console.warn((`Status "${action.payload.oldStatus}" does not exists.`))
+            return state
+          }
+
+          const updatedContactStatus = {...state.contactStatuss}
+          delete updatedContactStatus[action.payload.oldStatus]
+          updatedContactStatus[action.payload.newStatus] = {
+            count: state.contactStatuss[action.payload.oldStatus].count,
+            bg: action.payload.newBg,
+          }
+
+          const updatedContacts = state.contacts.map(contact => {
+            if(contact.status === action.payload.oldStatus){
+              return {...contact, status: action.payload.newStatus}
+            }
+            return contact
+          })
+
+          return{
+            ...state,
+            contactStatuss: updatedContactStatus,
+            contacts: updatedContacts
           }
         }
         case ADD_STATUS:

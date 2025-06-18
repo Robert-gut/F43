@@ -1,17 +1,19 @@
 import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { useNavigate } from "react-router"
-import { addStatus } from "../../redux/actions"
+import { useDispatch, useSelector } from "react-redux"
+import { useNavigate, useParams } from "react-router"
+import { editStatus } from "../../redux/actions"
 
-export default function AddContactStatus() {
+export default function EditContactStatus() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [statusName, setStatusName] = useState('')
-    const [color, setColor] = useState('#000000')
+    const param = useParams()
+    const status = useSelector(state => state.contactStatuss[param.status])
+    const [statusName, setStatusName] = useState([param.status])
+    const [color, setColor] = useState(status.bg)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(addStatus(statusName, color))
+        dispatch(editStatus(param.status, statusName, color))
         navigate('/contact-statuss')
     }
     return(
@@ -23,7 +25,7 @@ export default function AddContactStatus() {
                 padding: '40px 30px',
                 margin: '10px auto',
             }} onSubmit={handleSubmit} className="modal-content rounded shadow">
-                <h1 className="text-center">Add contact status</h1>
+                <h1 className="text-center">Edit contact status</h1>
                 <hr />
                 <div className="mb-3">
                     <label htmlFor="statusName">Status name</label>
@@ -48,7 +50,7 @@ export default function AddContactStatus() {
                     />
                 </div>
                 <button type="submit" className="btn btn-success btn-lg form-control">
-                    Add
+                    Save
                 </button>
             </form>
         </div>

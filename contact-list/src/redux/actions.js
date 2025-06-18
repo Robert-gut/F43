@@ -6,6 +6,7 @@ import {
     SEARCH_CONTACT,
     DELETE_STATUS,
     ADD_STATUS,
+    EDIT_STATUS,
 } from './type'
 
 export const addContact = (newContact) => {
@@ -54,5 +55,12 @@ export const addStatus = (status, color) => {
     return{
         type: ADD_STATUS,
         payload: {status, color},
+    }
+}
+
+export const editStatus = (oldStatus, newStatus, newBg) => {
+    return{
+        type: EDIT_STATUS,
+        payload: {oldStatus, newStatus, newBg},
     }
 }

@@ -47,7 +47,7 @@ export default function ContactStatuss(){
                                 <td className="fs-4 fw-bold" style={{backgroundColor: statusCounts[status].bg}}>{statusCounts[status].bg}</td>
                                 <td className="fs-4 fw-bold">{statusCounts[status].count}</td>
                                 <td>
-                                <Link to={`/edit-contact`}><FaRegEdit size={'50px'} color="yellow"/></Link>
+                                <Link to={`/contact-statuss/edit-contact-status/${status}`}><FaRegEdit size={'50px'} color="yellow"/></Link>
                                 <button type="button" disabled={status === 'others'} style={{cursor: 'pointer',border: 'none', background: 'none'}} onClick={() => {handleDeleteStatus(status)}}>
                                     <MdDeleteForever size={'50px'} color={status === 'others' ? 'grey' : 'red'} />
                                 </button>
