@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setFilter } from "../../redux/actions";
 
@@ -35,11 +35,11 @@ export default function Sidebar() {
               Contact Summary
             </div>
             <ul className="list-group mb-3">
-                <li onClick={() => handleFilterChange('all')} 
+              <li onClick={() => handleFilterChange('all')} 
                 className={`list-group-item d-flex justify-content-between align-items-center list-group-item-action ${filter === 'all' ? 'active' : ''}`} style={{cursor: 'pointer'}}> 
                     ALL CONTACTS
-                    <span style={{backgroundColor: 'black'}} className="badge rounded-pill ">{totalContacts}</span>
-                </li>
+                <span style={{backgroundColor: 'black'}} className="badge rounded-pill ">{totalContacts}</span>
+              </li>
               {
                 Object.keys(statusCounts).map(status => (
                   <li onClick={() => handleFilterChange(status)} key={status} className={`list-group-item d-flex justify-content-between align-items-center list-group-item-action ${filter === status ? 'active' : ''}`} style={{cursor: 'pointer'}}> 
