@@ -7,6 +7,7 @@ import {
     DELETE_STATUS,
     ADD_STATUS,
     EDIT_STATUS,
+    SET_FILTER,
 } from './type'
 
 export const addContact = (newContact) => {
@@ -64,3 +65,11 @@ export const editStatus = (oldStatus, newStatus, newBg) => {
         payload: {oldStatus, newStatus, newBg},
     }
 }
+
+export const setFilter = (filter) => {
+  return {
+    type: SET_FILTER,
+    payload: filter,
+  }
+}
+

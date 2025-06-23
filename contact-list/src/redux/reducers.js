@@ -7,6 +7,7 @@ import {
     DELETE_STATUS,
     ADD_STATUS,
     EDIT_STATUS,
+    SET_FILTER,
 } from './type'
 
 const intialState = {
@@ -123,6 +124,7 @@ const intialState = {
         },
       ],
     searchTerm: '',
+    filter: 'all',
     contactStatuss: {
       work: {count: 0, bg: '#F39F5A'},
       family: {count: 0, bg: '#AE445A'},
@@ -227,6 +229,11 @@ const reducer = (state = intialState, action) => {
               [action.payload.status]: {count: 0, bg: action.payload.color}
             }
           }
+          case SET_FILTER:
+            return {
+              ...state,
+              filter: action.payload
+            }
         default:
             return state
     }

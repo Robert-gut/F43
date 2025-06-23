@@ -8,10 +8,14 @@ import { deleteContact, toggleFavorite } from '../../redux/actions'
 export default function ContactItem() {
   const contacts = useSelector(state => state.contacts)
   const searchTerm = useSelector(state => state.searchTerm)
+  const activeFilter = useSelector(state => state.filter)
   const dispatch = useDispatch()
 
 
-  const filteredContacts = searchTerm ? contacts.filter(contact => `${contact.firstName} ${contact.lastName} ${contact.email} ${contact.phone}`.toLowerCase().includes(searchTerm.toLowerCase()) ) : contacts
+  const filteredContacts = contacts
+  .filter(contact => (activeFilter === 'all' ? true : contact.status === activeFilter))
+  .filter(contact =>
+    searchTerm ? `${contact.firstName} ${contact.lastName} ${contact.email} ${contact.phone}`.toLowerCase().includes(searchTerm.toLowerCase()): true)
 
   return(
     <div>

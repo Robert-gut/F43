@@ -8,7 +8,7 @@ export default function EditContactStatus() {
     const dispatch = useDispatch()
     const param = useParams()
     const status = useSelector(state => state.contactStatuss[param.status])
-    const [statusName, setStatusName] = useState([param.status])
+    const [statusName, setStatusName] = useState(param.status)
     const [color, setColor] = useState(status.bg)
 
     const handleSubmit = (e) => {
