@@ -8,68 +8,67 @@ import {
   ADD_STATUS,
   EDIT_STATUS,
   SET_FILTER,
-} from './type'
+} from "./type";
 
 export const addContact = (newContact) => {
-  return{
+  return {
     type: ADD_CONTACT,
-    payload: newContact
-  }
-}
+    payload: newContact,
+  };
+};
 
 export const deleteContact = (id) => {
-  return{
+  return {
     type: DELETE_CONTACT,
-    payload: id
-  }
-}
+    payload: id,
+  };
+};
 
 export const editContact = (id, updatedContact) => {
-  return{
+  return {
     type: EDIT_CONTACT,
-    payload: {id, updatedContact}
-  }
-}
+    payload: { id, updatedContact },
+  };
+};
 
 export const toggleFavorite = (id) => {
-  return{
+  return {
     type: TOGGLE_FAVORITE,
-    payload: id
-  }
-}
+    payload: id,
+  };
+};
 
 export const searchContact = (searchTerm) => {
-  return{
+  return {
     type: SEARCH_CONTACT,
-    payload: searchTerm.toLowerCase()
-  }
-}
+    payload: searchTerm.toLowerCase(),
+  };
+};
 
 export const deleteStatus = (status) => {
-  return{
+  return {
     type: DELETE_STATUS,
     payload: status,
-  }
-}
+  };
+};
 
 export const addStatus = (status, color) => {
-  return{
+  return {
     type: ADD_STATUS,
-    payload: {status, color},
-  }
-}
+    payload: { status, color },
+  };
+};
 
 export const editStatus = (oldStatus, newStatus, newBg) => {
-  return{
+  return {
     type: EDIT_STATUS,
-    payload: {oldStatus, newStatus, newBg},
-  }
-}
+    payload: { oldStatus, newStatus, newBg },
+  };
+};
 
 export const setFilter = (filter) => {
   return {
     type: SET_FILTER,
     payload: filter,
-  }
-}
-
+  };
+};

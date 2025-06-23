@@ -8,7 +8,7 @@ import {
   ADD_STATUS,
   EDIT_STATUS,
   SET_FILTER,
-} from './type'
+} from "./type";
 
 const intialState = {
   contacts: [
@@ -123,120 +123,122 @@ const intialState = {
       favorite: true,
     },
   ],
-  searchTerm: '',
-  filter: 'all',
+  searchTerm: "",
+  filter: "all",
   contactStatuss: {
-    work: {count: 0, bg: '#F39F5A'},
-    family: {count: 0, bg: '#AE445A'},
-    private: {count: 0, bg: '#662549'},
-    friends: {count: 0, bg: '#451952'},
-    others: {count: 0, bg: '#00FA9A'},
-  }
-}
+    work: { count: 0, bg: "#F39F5A" },
+    family: { count: 0, bg: "#AE445A" },
+    private: { count: 0, bg: "#662549" },
+    friends: { count: 0, bg: "#451952" },
+    others: { count: 0, bg: "#00FA9A" },
+  },
+};
 
 const reducer = (state = intialState, action) => {
   switch (action.type) {
     case ADD_CONTACT:
-      return{
+      return {
         ...state,
-        contacts: [...state.contacts, action.payload]
-      }
+        contacts: [...state.contacts, action.payload],
+      };
     case DELETE_CONTACT:
-      return{
+      return {
         ...state,
-        contacts: state.contacts.filter(contact => contact.id !== action.payload) 
-      }
-    case EDIT_CONTACT: 
-      return{
+        contacts: state.contacts.filter((contact) => contact.id !== action.payload),
+      };
+    case EDIT_CONTACT:
+      return {
         ...state,
-        contacts: state.contacts.map(contact => {
+        contacts: state.contacts.map((contact) => {
           if (contact.id === action.payload.id) {
-            return{
+            return {
               ...contact,
-              ...action.payload.updatedContact
-            }
+              ...action.payload.updatedContact,
+            };
           }
-          return contact
-        })
-      }
+          return contact;
+        }),
+      };
     case TOGGLE_FAVORITE:
-      return{
+      return {
         ...state,
-        contacts: state.contacts.map(contact => contact.id === action.payload ? {...contact, favorite: !contact.favorite} : contact,)
-      }
+        contacts: state.contacts.map((contact) =>
+          contact.id === action.payload ? { ...contact, favorite: !contact.favorite } : contact,
+        ),
+      };
     case SEARCH_CONTACT:
-      return{
+      return {
         ...state,
-        searchTerm: action.payload
-      }
+        searchTerm: action.payload,
+      };
     case DELETE_STATUS: {
-      const newContactStatussAfterDelete = {...state.contactStatuss}
-      const deleteContactStatus = newContactStatussAfterDelete[action.payload].count
-      delete newContactStatussAfterDelete[action.payload]
+      const newContactStatussAfterDelete = { ...state.contactStatuss };
+      const deleteContactStatus = newContactStatussAfterDelete[action.payload].count;
+      delete newContactStatussAfterDelete[action.payload];
 
-      const contactsAfterStatusDelete = state.contacts.map(contact => {
-        if(contact.status === action.payload){
-          return {...contact, status: 'others'}
+      const contactsAfterStatusDelete = state.contacts.map((contact) => {
+        if (contact.status === action.payload) {
+          return { ...contact, status: "others" };
         }
-        return contact
-      })
+        return contact;
+      });
 
-      if(newContactStatussAfterDelete['others']){
-        newContactStatussAfterDelete['others'].count += deleteContactStatus
+      if (newContactStatussAfterDelete["others"]) {
+        newContactStatussAfterDelete["others"].count += deleteContactStatus;
       }
 
-      return{
+      return {
         ...state,
         contactStatuss: newContactStatussAfterDelete,
-        contacts: contactsAfterStatusDelete
-      }
+        contacts: contactsAfterStatusDelete,
+      };
     }
     case EDIT_STATUS: {
-      if(!state.contactStatuss[action.payload.oldStatus]){
-        console.warn((`Status "${action.payload.oldStatus}" does not exists.`))
-        return state
+      if (!state.contactStatuss[action.payload.oldStatus]) {
+        console.warn(`Status "${action.payload.oldStatus}" does not exists.`);
+        return state;
       }
 
-      const updatedContactStatus = {...state.contactStatuss}
-      delete updatedContactStatus[action.payload.oldStatus]
+      const updatedContactStatus = { ...state.contactStatuss };
+      delete updatedContactStatus[action.payload.oldStatus];
       updatedContactStatus[action.payload.newStatus] = {
         count: state.contactStatuss[action.payload.oldStatus].count,
         bg: action.payload.newBg,
-      }
+      };
 
-      const updatedContacts = state.contacts.map(contact => {
-        if(contact.status === action.payload.oldStatus){
-          return {...contact, status: action.payload.newStatus}
+      const updatedContacts = state.contacts.map((contact) => {
+        if (contact.status === action.payload.oldStatus) {
+          return { ...contact, status: action.payload.newStatus };
         }
-        return contact
-      })
+        return contact;
+      });
 
-      return{
+      return {
         ...state,
         contactStatuss: updatedContactStatus,
-        contacts: updatedContacts
-      }
+        contacts: updatedContacts,
+      };
     }
     case ADD_STATUS:
-      if(state.contactStatuss[action.payload.status]){
-        console.worn(`Status "${action.payload.status}" already exists.`)
-        return state
+      if (state.contactStatuss[action.payload.status]) {
+        console.worn(`Status "${action.payload.status}" already exists.`);
+        return state;
       }
-      return{
+      return {
         ...state,
         contactStatuss: {
           ...state.contactStatuss,
-          [action.payload.status]: {count: 0, bg: action.payload.color}
-        }
-      }
+          [action.payload.status]: { count: 0, bg: action.payload.color },
+        },
+      };
     case SET_FILTER:
       return {
         ...state,
-        filter: action.payload
-      }
+        filter: action.payload,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

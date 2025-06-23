@@ -1,14 +1,13 @@
 import { useReducer, useRef, useState } from "react";
 
-
 export default function NotFound() {
   //!1 useState - зберігає стан компонента [стан, змінити стан]
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   const handleClick = () => {
-    setCount(count + 1)
+    setCount(count + 1);
     console.log(count);
-  }
+  };
   //!2 useEffect - побічні ефекти
   // 1 Mounting монтування компонента - народження, створення ком і він зявляється в DOM
   // 2 Updating оновлення компонента - життя
@@ -18,7 +17,7 @@ export default function NotFound() {
   //   .then(response => response.json())
   //   .then(json => console.log(json))
 
-  //! A буде оновлюватися при любому рендеру 
+  //! A буде оновлюватися при любому рендеру
   // useEffect(()=>{
   //     console.log('ok');
   // })
@@ -55,7 +54,7 @@ export default function NotFound() {
   //     const tim = setInterval(()=>{
   //         console.log('test');
   //         setTimer(timer + 1)
-  //     }, 1000) 
+  //     }, 1000)
   //     return () => clearInterval(tim)
   // },[])
 
@@ -103,7 +102,7 @@ export default function NotFound() {
   //            onClick={toggleTheme}
   //            style={{
   //             backgroundColor: theme === 'dark' ? '#333' : '#eee'
-  //            }} 
+  //            }}
   //         >поточна тема: {theme}</button>
   //     )
   // }
@@ -125,27 +124,26 @@ export default function NotFound() {
 
   function counterReducer(state, actions) {
     switch (actions.type) {
-      case 'increment':
-        return {count: state.count + 1}
-      case 'decrement':
-        return {count: state.count - 1}
-      case 'reset':
-        return {count: 0}
+      case "increment":
+        return { count: state.count + 1 };
+      case "decrement":
+        return { count: state.count - 1 };
+      case "reset":
+        return { count: 0 };
       default:
         throw new Error(`unknown action`);
     }
   }
 
-  const [state, dispatch] = useReducer(counterReducer, {count: 0})
-
+  const [state, dispatch] = useReducer(counterReducer, { count: 0 });
 
   //!7 useRef - змінна яка зберігаєть і не викликає рендер
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
   const handleFocus = () => {
-    inputRef.current.focus()
-  }
+    inputRef.current.focus();
+  };
 
-  return(
+  return (
     <div className="container">
       <h1>NotFound</h1>
       <h2>Hooks</h2>
@@ -161,13 +159,13 @@ export default function NotFound() {
 
       <h3>6. useReducer</h3>
       <h5>{state.count}</h5>
-      <button onClick={()=>dispatch({type: 'increment'})}>+</button>
-      <button onClick={()=>dispatch({type: 'decrement'})}>-</button>
-      <button onClick={()=>dispatch({type: 'reset'})}>reset</button>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      <button onClick={() => dispatch({ type: "reset" })}>reset</button>
 
       <h3>7. useRef</h3>
-      <input type="text" ref={inputRef}/>
+      <input type="text" ref={inputRef} />
       <button onClick={handleFocus}>focus</button>
     </div>
-  )
+  );
 }

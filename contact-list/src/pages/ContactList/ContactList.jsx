@@ -1,18 +1,17 @@
-import ContactItem from "../../components/ContactItem/ContactItem"
-import Sidebar from "../../components/Sidebar/Sidebar"
-
+import ContactItem from "../../components/ContactItem/ContactItem";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 export default function ContactList() {
-  return(
+  return (
     <div className="container rounded bg-white shadow-lg">
       <div className="row">
         <div className="col-3">
-          <Sidebar/>
+          <Sidebar />
         </div>
         <div className="col-9">
-          <ContactItem/>
+          <ContactItem />
         </div>
       </div>
     </div>
-  )
+  );
 }
